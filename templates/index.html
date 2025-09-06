@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider Tailwind</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+</head>
+<body>
+  
+  <section class="w-[90%] mx-auto max-w-screen-lg overflow-hidden text-white rounded-lg mt-20 slider" id="slider">
+    
+    <figure class="relative w-full h-full aspect-video slider-childs">
+      <img src="{{ url_for('static', filename='images/img1.png') }}" class="w-full h-full block object-cover">
+      <div class="absolute inset-0 w-[90%] mx-auto h-max mt-auto space-y-4 py-8 hidden md:block">
+        <h2 class="text-3xl font-bold">Imagen color rojo</h2>
+        <p>Ojala Sigamos mejorando</p>
+      </div>
+    </figure>
+
+    <figure class="relative w-full h-full aspect-video slider-childs">
+      <img src="{{ url_for('static', filename='images/img2.png') }}" class="w-full h-full block object-cover">
+      <div class="absolute inset-0 w-[90%] mx-auto h-max mt-auto space-y-4 py-8 hidden md:block">
+        <h2 class="text-3xl font-bold">Imagen color naranja</h2>
+        <p>Usa para fondo de pantalla</p>
+      </div>
+    </figure>
+
+    <figure class="relative w-full h-full aspect-video slider-childs" data-active>
+      <img src="{{ url_for('static', filename='images/img3.png') }}" class="w-full h-full block object-cover">
+      <div class="absolute inset-0 w-[90%] mx-auto h-max mt-auto space-y-4 py-8 hidden md:block">
+        <h2 class="text-3xl font-bold">Imagen color morado</h2>
+        <p>Estos fondos son bonitos</p>
+      </div>
+    </figure>
+
+    <button class="slider-prev bg-white rounded-full ml-4" data-button="prev">
+      <img src="{{ url_for('static', filename='icons/prev.svg') }}" class="w-8 aspect-square md:w-12">
+    </button>
+
+    <button class="slider-next bg-white rounded-full mr-4" data-button="next">
+      <img src="{{ url_for('static', filename='icons/next.svg') }}" class="w-8 aspect-square md:w-12">
+    </button>
+
+  </section>
+
+  <script src="{{ url_for('static', filename='js/slider.js') }}" defer></script>
+</body>
+</html>
